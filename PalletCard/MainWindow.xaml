@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PalletCard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="1250" Width="800">
+    <DockPanel x:Name="Dockpanel" Loaded="Dockpanel_Loaded" Margin="0,0,0,-21">
+        <Frame x:Name="_mainFrame" />
+        <DataGrid x:Name="dataGrid" VerticalAlignment="Bottom" Width="800" Height="150" Margin="0,0,0,28"/>
+    </DockPanel>
 </Window>
