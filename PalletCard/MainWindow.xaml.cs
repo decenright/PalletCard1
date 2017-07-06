@@ -25,6 +25,9 @@ namespace PalletCard
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        bool sectionbtns;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -65,11 +68,21 @@ namespace PalletCard
             using (DataTable operations = new DataTable())
             {
                 myAdapter.Fill(operations);              
-                string job = searchBox.Text; 
+                string job = searchBox.Text;
+                string name = "0/2 Sheet Work";
                 DataView dv = new DataView(operations);
                 //dv.RowFilter = "Name like '%3%' and JobNo like '%101885%'";
                 dv.RowFilter = "ResourceID = '5' and JobNo = " + "'"+ job +"'" ; 
                 dataGrid.ItemsSource = dv;
+
+                var x = 1;
+                var y = 2;
+                var z = x + y;
+                if(z==3)
+                {
+                    dv.RowFilter = "ResourceID = '5' and JobNo = " + "'" + job + "'" + "and Name = " + "'" + name + "'";
+                }
+
             }
 
 
