@@ -6,8 +6,19 @@
         xmlns:local="clr-namespace:PalletCard"
         mc:Ignorable="d"
         Title="MainWindow" Height="1250" Width="800">
-    <DockPanel x:Name="Dockpanel" Loaded="Dockpanel_Loaded" Margin="0,0,0,-21">
+    <DockPanel>
         <Frame x:Name="_mainFrame" />
-        <DataGrid x:Name="dataGrid" VerticalAlignment="Bottom" Width="800" Height="150" Margin="0,0,0,28"/>
+        <StackPanel x:Name="Dockpanel" Loaded="Dockpanel_Loaded" Margin="0,0,0,0">
+            <StackPanel HorizontalAlignment="Left" Height="700" Width="280" Margin="0,80,0,0">
+                <TextBox x:Name="searchBox" Height="70" TextWrapping="Wrap" Text="TextBox" Margin="10,0,0,10" ScrollViewer.CanContentScroll="True" FontSize="36" Width="240"/>
+                <Button x:Name="button" Content="Search" Width="149" Background="#FF8ECB72" FontSize="36" Foreground="#FFFBF7F7" FontWeight="Bold" Height="58" Margin="66,30,65,30" Click="Search"/>
+            </StackPanel>
+            <!--<StackPanel>-->
+            <DataGrid x:Name="dataGrid" VerticalAlignment="Center" Width="760" Height="150" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+
+
+
+            <!--</StackPanel>-->
+        </StackPanel>
     </DockPanel>
 </Window>

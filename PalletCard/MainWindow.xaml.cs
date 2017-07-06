@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.Odbc;
 using System.Data.SqlClient;
@@ -16,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace PalletCard
 {
     /// <summary>
@@ -28,10 +30,20 @@ namespace PalletCard
             InitializeComponent();
         }
 
-        private void Dockpanel_Loaded(object sender, RoutedEventArgs e)
+        public void Dockpanel_Loaded(object sender, RoutedEventArgs e)
         {
+
+        }
+
+
+
+
+        private void Search(object sender, RoutedEventArgs e)
+        {
+
+
             string ConnectionString = Convert.ToString("Dsn=TharData;uid=tharuser");
-            string CommandText = "SELECT * FROM app_PalletOperations where resourceID = 5";
+            string CommandText = "SELECT * FROM app_PalletOperations";
             OdbcConnection myConnection = new OdbcConnection(ConnectionString);
             OdbcCommand myCommand = new OdbcCommand(CommandText, myConnection);
             OdbcDataAdapter myAdapter = new OdbcDataAdapter();
@@ -52,10 +64,15 @@ namespace PalletCard
             }
             using (DataTable operations = new DataTable())
             {
-                myAdapter.Fill(operations);
-                dataGrid.ItemsSource = operations.DefaultView;
-                myAdapter.Update(operations);
+                myAdapter.Fill(operations);              
+                string job = searchBox.Text; 
+                DataView dv = new DataView(operations);
+                //dv.RowFilter = "Name like '%3%' and JobNo like '%101885%'";
+                dv.RowFilter = "ResourceID = '5' and JobNo = " + "'"+ job +"'" ; 
+                dataGrid.ItemsSource = dv;
             }
+
+
         }
     }
 
