@@ -31,6 +31,8 @@ namespace PalletCard
         public MainWindow()
         {
             InitializeComponent();
+            Section h = new Section();
+
         }
 
         public void Dockpanel_Loaded(object sender, RoutedEventArgs e)
@@ -88,6 +90,14 @@ namespace PalletCard
             }
 
 
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (main.CanGoBack)
+            {
+                main.GoBack();
+            }
         }
     }
 

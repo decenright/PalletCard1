@@ -24,5 +24,11 @@ namespace PalletCard
         {
             InitializeComponent();
         }
+
+        private void btnAction2_Click(object sender, RoutedEventArgs e)
+        {
+            Section s = new Section();
+            this.NavigationService.Navigate(s);
+        }
     }
 }

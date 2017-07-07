@@ -10,7 +10,7 @@
 
     <Grid>
         <Button x:Name="btnAction1" Content="Pallet Card" Background="#FF72ABCB" FontSize="26" Foreground="#FFFBF7F7" FontWeight="Bold" Margin="10,34,10,496" Height="70"/>
-        <Button x:Name="btnAction2" Content="Return Paper" Background="#FF72ABCB" FontSize="26" Foreground="#FFFBF7F7" FontWeight="Bold" Margin="10,140,10,390" Height="70"/>
+        <Button x:Name="btnAction2" Content="Return Paper" Background="#FF72ABCB" FontSize="26" Foreground="#FFFBF7F7" FontWeight="Bold" Margin="10,140,10,390" Height="70" Click="btnAction2_Click"/>
         <Button x:Name="btnAction3" Content="Backup/Varnish Pallet" Background="#FF72ABCB" FontSize="26" Foreground="#FFFBF7F7" FontWeight="Bold" Margin="10,250,10,280" Height="70"/>
         <Button x:Name="btnAction4" Content="Reject Paper" Background="#FF72ABCB" FontSize="26" Foreground="#FFFBF7F7" FontWeight="Bold" Margin="10,355,10,175" Height="70"/>
     </Grid>
