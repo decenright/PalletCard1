@@ -5,20 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PalletCard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1250" Width="800">
-    <DockPanel>
-        <Frame x:Name="_mainFrame" />
-        <StackPanel x:Name="Dockpanel" Loaded="Dockpanel_Loaded" Margin="0,0,0,0">
-            <StackPanel HorizontalAlignment="Left" Height="700" Width="280" Margin="0,80,0,0">
-                <TextBox x:Name="searchBox" Height="70" TextWrapping="Wrap" Text="TextBox" Margin="10,0,0,10" ScrollViewer.CanContentScroll="True" FontSize="36" Width="240"/>
-                <Button x:Name="button" Content="Search" Width="149" Background="#FF8ECB72" FontSize="36" Foreground="#FFFBF7F7" FontWeight="Bold" Height="58" Margin="66,30,65,30" Click="Search"/>
-            </StackPanel>
-            <!--<StackPanel>-->
-            <DataGrid x:Name="dataGrid" VerticalAlignment="Center" Width="760" Height="150" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+        Title="MainWindow" Height="1000" Width="800">
+    <DockPanel x:Name="Dockpanel" Loaded="Dockpanel_Loaded" Margin="0,0,0,0" >
 
-
-
-            <!--</StackPanel>-->
+        <StackPanel DockPanel.Dock="Bottom">
+            <DataGrid x:Name="dataGrid" Width="760" Height="150" Margin="0,0,0,0"/>
         </StackPanel>
+
+        <StackPanel DockPanel.Dock="Left" Height="700" Width="280">
+                <Label x:Name="lblJobNo" Height="60" Width="280" Background="#FFB3C9A1" Margin="10,0,0,0"/>
+                <Label x:Name="lblPress" Height="60" Width="280" Background="#FFB3C9A1" Margin="10,0,0,0"/>
+                <Label x:Name="lblAction" Height="60" Width="280" Background="#FFB3C9A1" Margin="10,0,0,0"/>
+                <Label x:Name="lblSection" Height="60" Width="280" Background="#FFB3C9A1" Margin="10,0,0,0"/>
+                <Label x:Name="lblPaperSize" Height="60" Width="280" Background="#FFB3C9A1" Margin="10,0,0,0"/>
+                <Label x:Name="lblPalletHeight" Height="60" Width="280" Background="#FFB3C9A1" Margin="10,0,0,0"/>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="0,40,0,0">
+            <TextBox x:Name="searchBox" Height="70" TextWrapping="Wrap" Text="" Margin="10,0,0,10" ScrollViewer.CanContentScroll="True" FontSize="36" Width="240" />
+            <Button x:Name="button" Content="Search" Width="149" Background="#FF8ECB72" FontSize="36" Foreground="#FFFBF7F7" FontWeight="Bold" Height="58" Margin="66,30,65,30" Click="Search"/>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Right">
+            <Frame x:Name="main"/>
+        </StackPanel>
+
     </DockPanel>
 </Window>

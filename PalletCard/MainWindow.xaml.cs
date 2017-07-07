@@ -83,6 +83,8 @@ namespace PalletCard
                     dv.RowFilter = "ResourceID = '5' and JobNo = " + "'" + job + "'" + "and Name = " + "'" + name + "'";
                 }
 
+                main.Content = new Action();
+
             }
 
 
